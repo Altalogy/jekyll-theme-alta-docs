@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-alta-docs"
-  spec.version       = "0.1.0"
+  spec.version       = "0.2.0"
   spec.authors       = ["Tom Antas"]
   spec.email         = ["tom@altalogy.com"]
 
-  spec.summary       = "Dev docs theme."
+  spec.summary       = "The Jekyll theme for documenting software development projects.."
   spec.homepage      = "https://github.com/altalogy/jekyll-theme-alta-docs"
   spec.license       = "MIT"
 
