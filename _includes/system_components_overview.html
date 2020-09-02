@@ -1,0 +1,12 @@
+<div class="ad-system_components">
+  {% for component in site.system_components %}
+    <div class="ad-system_component">
+      <span class="name">{{ component.name }}</span>
+      <ul>
+        {% for tech in component.techs %}
+          <li>{{ tech.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

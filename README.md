@@ -93,7 +93,12 @@ Add more documents in *_docs* folder and see [advanced options](#advanced-option
 ### Common _config.yml options
 
         title             : "Project title"
-        project_name      : "Project name" # Displayed in the navbar
+
+        getting_started   : >-    # Used in the Project overview component
+          Take a look on the useful materials below.
+          Start by checking "the System Overview" to get a big picture of the project.
+          Don't forget to check "Development Guidelines".
+          Find more by exploring navigation on the left.
 
 
 
@@ -112,9 +117,43 @@ Links to the repositories can be added in *_config.yml*:
             - name  : Docs repository
               icon  : "fab fa-gitlab" # Use fontawesome v6
               url   : https://bitbucket.org/
+          useful:
+            - name  : System overview
+              icon  : "fas fa-project-diagram"
+              url   : /architecture/
+            - name  : Architecture
+              icon  : "fas fa-clipboard-list"
+              url   : /architecture/
+            - name  : Development Guidelines
+              icon  : "fas fa-pencil-alt"
+              url   : /architecture/
 
 Repositories links are displayed in website footer.
 
+
+### System components
+
+You can define the system components like Backend, Frontend etc. in *_config.yml*:
+
+        system_components:
+          - name  : Frontend
+            techs :
+              - name: React.js
+              - name: Redux
+          - name  : Backend
+            techs :
+              - name: Ruby on Rails
+          - name  : Database
+            techs :
+              - name: PostgreSQL
+          - name  : Service provider
+            techs :
+              - name: AWS
+
+The "System components" are used in two components:
+
+* `project_overview.html` > `{% include project_overview.html %}`
+* `system_components_overview.html` > `{% include project_overview.html %}`
 
 
 ### Versioning
@@ -124,7 +163,30 @@ The documentation version is displayed in the footer.
         doc_version       : 1.0.0
 
 
+## Components (includes)
 
+### Project overview
+
+The "Project overview" component renders:
+
+* `project_title`
+* `doc_version`
+* `description`
+* `getting_started`
+* `system_components`
+* `links`
+
+Props:
+
+* `next_button` - URL for the "Get started!" button
+
+Usage:
+
+        {% include project_overview.html next_button="/docs/development/" %}
+
+Example:
+
+![Project overview](docs/project_overview.png)
 
 
 ## Development

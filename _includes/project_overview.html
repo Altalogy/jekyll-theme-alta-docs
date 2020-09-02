@@ -1,0 +1,41 @@
+<div class="ad-project-overview container">
+  <div class="ad-project-overview__header">
+    <h1>{{ site.title }}</h1>
+    <span class="ad-project-overview__version">{{ site.doc_version }}</span>
+    {% if site.description %}
+      <p class="ad-project-overview__site-description">{{ site.description }}</p>
+    {% endif %}
+  </div>
+
+  <div class="ad-project-overview__content">
+    <div class="ad-page-section">
+      <h2><span class="symbol">&#128640;</span> Getting started</h2>
+      {% if site.getting_started %}
+        <p>{{ site.getting_started }}</p>
+      {% endif %}
+    </div>
+
+    {% if site.system_components %}
+      <div class="ad-page-section">
+        <h3><span class="symbol">&#128736;</span> System components</h3>
+        {% include system_components_overview.html %}
+      </div>
+    {% endif %}
+
+    {% if site.links %}
+      <div class="ad-page-section">
+        <h3><span class="symbol">&#128279;</span> Links</h3>
+        {% include useful_links.html %}
+      </div>
+    {% endif %}
+
+
+    {% if include.next_button %}
+      <hr />
+      <div class="ad-project-overview__next-button">
+        <a href="{{ include.next_button }}" class="ad-btn-primary btn-lg">Get started!</a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
