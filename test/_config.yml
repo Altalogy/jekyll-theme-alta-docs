@@ -1,0 +1,9 @@
+
+theme             : "jekyll-theme-alta-docs"
+title             : "Project title"
+project_name      : "Project name"
+
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/

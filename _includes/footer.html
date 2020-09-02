@@ -1,0 +1,16 @@
+<footer class="ad-page__footer">
+  <div class="container">
+    <div class="ad-page__footer-content">
+      <ul class='links-list'>
+        {% for link in site.links.repos %}
+          <li>
+            <a href="{{ link.url }}"><i class="{{ link.icon }}"></i> {{ link.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="ad-page__subfooter-content">
+      <span>{{ site.project_name }}, {{ site.doc_version }}</span>
+    </div>
+  </div>
+</footer>

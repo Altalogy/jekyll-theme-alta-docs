@@ -1,0 +1,56 @@
+
+title             : "Project documentation"
+project_name      : "Example"
+url               : # http://example.com
+base_url          : # /docs
+repository        : # username/repo-name
+
+permalink         : /:categories/:title/
+
+doc_collection    : docs
+doc_version       : 1.0.0
+
+links:
+  repos:
+    - name  : Web app repository
+      icon  : "fab fa-github" # Use fontawesome v6
+      url   : https://bitbucket.org/
+    - name  : Backend repository
+      icon  : "fab fa-bitbucket" # Use fontawesome v6
+      url   : https://bitbucket.org/
+    - name  : Docs repository
+      icon  : "fab fa-gitlab" # Use fontawesome v6
+      url   : https://bitbucket.org/
+
+sass:
+  sass_dir        : _sass
+  style           : compressed
+
+plugins:
+  - jekyll-sitemap
+
+whitelist:
+  - jekyll-sitemap
+
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Gemfile
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /test
+
+# contributors  :

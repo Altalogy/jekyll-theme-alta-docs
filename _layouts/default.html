@@ -1,0 +1,23 @@
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include navbar.html %}
+    <div class="ad-page__container ad-page__two-columns-layout container">
+      <div class="ad-page__sidebar">
+        {% include sidebar.html %}
+      </div>
+      <div class="ad-page__content">
+        {{ content }}
+      </div>
+    </div>
+
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+  </body>
+</html>

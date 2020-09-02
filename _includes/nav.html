@@ -1,0 +1,46 @@
+{% assign docs = site[site.doc_collection] | sort: "order" %}
+{% assign docs_grouped = docs | group_by: "category" %}
+
+{% if page.url == '/' || page.url == '' || %}
+    {% assign current = 'active' %}
+{% else %}
+    {% assign current = null %}
+{% endif %}
+
+<nav class="ad-site-nav">
+
+  <a href="/" class="ad-btn-nav-home {{ current }}">
+    <span class="symbol">&#128640;</span> Getting started
+  </a>
+
+  {% for cat in docs_grouped %}
+    <button class="ad-collapsible">{{ cat.name }}</button>
+    <ul class="ad-collapsible-content">
+    {% for doc in cat.items %}
+      {% if doc.url == page.url %}
+          {% assign current = ' class="active"' %}
+      {% else %}
+          {% assign current = null %}
+      {% endif %}
+      <li{{ current }}><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+</nav>
+
+<script>
+var coll = document.getElementsByClassName("ad-collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
