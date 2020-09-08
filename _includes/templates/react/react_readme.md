@@ -33,6 +33,18 @@ You can find more details about the project in docs repository: **{{ project_nam
 
 Follow instructions from [Getting started](#getting-started) to run project.
 
+### Scripts
+
+`yarn start` - start application
+
+`yarn test` - test application
+
+`yarn build` - build application
+
+`yarn lint` - run eslint
+
+`yarn format` - format code with Prettier
+
 ### Tests
 
 TODO
