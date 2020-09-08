@@ -103,6 +103,10 @@ a.ad-btn-nav-home {
 }
 
 h1 {
+  font-family: $font-family-primary;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 800;
   i.fas, .symbol {
     font-size: 20px;
     margin-right: 7px;
@@ -110,6 +114,11 @@ h1 {
 }
 
 h2 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-family: $font-family-primary;
+  border-bottom: 1px solid $gray-400;
   i.fas, .symbol {
     font-size: 16px;
     margin-right: 5px;
@@ -117,10 +126,35 @@ h2 {
 }
 
 h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: $font-family-primary;
   i.fas, .symbol {
     font-size: 14px;
     margin-right: 5px;
   }
+}
+
+h4 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-family: $font-family-primary;
+  font-weight: 600;
+  i.fas, .symbol {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}
+
+p + ul {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 hr {
@@ -311,7 +345,7 @@ button.ad-collapsible, .ad-collapsible {
       list-style: none;
       margin: 0;
       ul {
-        padding-left: 15px;
+        padding-left: 25px;
         list-style: none;
       }
     }
@@ -329,7 +363,7 @@ button.ad-collapsible, .ad-collapsible {
     border: 1px solid $gray-400;
     box-sizing: border-box;
     border-spacing: 0;
-    font-size: 13px;
+    font-size: 14px;
     td, th {
       border-right: 1px solid $gray-400;
       border-bottom: 1px solid $gray-400;
@@ -376,7 +410,7 @@ button.ad-collapsible, .ad-collapsible {
   justify-content: flex-start;
   flex-wrap: wrap;
   .ad-system_component {
-    min-width: 200px;
+    min-width: 120px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -465,4 +499,44 @@ pre.highlight {
     color: #189c41;
   }
 
+}
+
+.highlighter-rouge.language-scss {
+  .c1 {
+    color: #aaa;
+  }
+  .nv {
+    color: #e00bbc;
+    font-weight: bold;
+  }
+  .nt {
+    color: #0b11d8;
+    font-weight: bold;
+  }
+  .nc {
+    color: #cea513;
+    font-weight: bold;
+  }
+}
+
+.highlighter-rouge.language-ruby {
+  .n { color: blue; }
+  .ss { color: #34bad8; }
+  .s1 { color: #189c41; }
+  .c1 { color: #aaa; }
+}
+
+.highlighter-rouge.language-bash {
+  .nv { color: blue; }
+  .nb { color: #189c41; }
+  .nt { color: #34bad8; }
+  .c { color: #aaa; }
+}
+
+.highlighter-rouge.language-javascript {
+  .nv { color: #cea513; }
+  .nx { color: blue; }
+  .nt { color: #34bad8; }
+  .c1 { color: #aaa; }
+  .kd { color: #cea513; font-weight: bold; }
 }

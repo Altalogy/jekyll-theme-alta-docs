@@ -7,6 +7,15 @@
     {% assign current = null %}
 {% endif %}
 
+{% assign current_category = null %}
+{% for cat in docs_grouped %}
+  {% for doc in cat.items %}
+    {% if doc.url == page.url %}
+      {% assign current_category = doc.category %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
 <nav class="ad-site-nav">
 
   <a href="/" class="ad-btn-nav-home {{ current }}">
@@ -14,7 +23,11 @@
   </a>
 
   {% for cat in docs_grouped %}
-    <button class="ad-collapsible">{{ cat.name }}</button>
+    {% if current_category == cat.name %}
+      <button class="ad-collapsible active">{{ cat.name }}</button>
+    {% else %}
+      <button class="ad-collapsible">{{ cat.name }}</button>
+    {% endif %}
     <ul class="ad-collapsible-content">
     {% for doc in cat.items %}
       {% if doc.url == page.url %}
@@ -42,5 +55,15 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     }
   });
+
+  // Expand already active category:
+  if (coll[i].classList.contains('active')) {
+    var content = coll[i].nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  }
 }
 </script>

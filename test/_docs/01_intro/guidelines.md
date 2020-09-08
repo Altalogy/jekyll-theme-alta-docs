@@ -6,6 +6,6 @@ order: 12
 toc: true
 ---
 
-## Guidelines
+## React
 
-The Guidelines doc.
+{% include guidelines/react/react_guidelines.md %}
