@@ -1,0 +1,25 @@
+{% assign model = include.model %}
+<h3>{{ model.name | upcase }}</h3>
+<p>{{ model.desc }}</p>
+<table class="models-list__table">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for field in model.fields %}
+      <tr>
+        <td>{{ field.name }}</td>
+        <td>{{ field.type }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p>Relations</p>
+<ul>
+  {% for relation in model.relations %}
+    <li>{{ relation.type }} <b>{{ relation.resource }}</b></li>
+  {% endfor %}
+</ul>

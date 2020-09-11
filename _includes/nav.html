@@ -35,7 +35,18 @@
       {% else %}
           {% assign current = null %}
       {% endif %}
-      <li{{ current }}><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+      <li{{ current }}>
+        <a href="{{ site.baseurl }}{{ doc.url }}" class='ad-nav-link'>
+          <span class='title'>{{ doc.title }}</span>
+          {% if doc.status || doc.prio || doc.version %}
+            <div class='doc-meta-nav'>
+              <span class='tag tag--{{ doc.status }} feature-meta__status--{{ doc.status }}'>{{ doc.status }}</span>
+              <span class='tag tag--{{ doc.prio }} feature-meta__status--{{ doc.prio }}'>{{ doc.prio }}</span>
+              <span class='version'>{{ doc.version }}</span>
+            </div>
+          {% endif %}
+        </a>
+      </li>
     {% endfor %}
     </ul>
   {% endfor %}

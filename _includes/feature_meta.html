@@ -1,0 +1,30 @@
+{% if page.status || page.prio || page.system_components || page.version %}
+  <div class='feature-meta'>
+    <div class='feature-meta__status'>
+      <label>Status:</label>
+      <div>
+        <span class='tag tag--{{ page.status }} feature-meta__status--{{ page.status }}'>{{ page.status }}</span>
+      </div>
+    </div>
+    <div class='feature-meta__prio'>
+      <label>Priority:</label>
+      <div>
+        <span class='tag tag--{{ page.prio }} feature-meta__prio--{{ page.prio }}'>{{ page.prio }}</span>
+      </div>
+    </div>
+    <div class='feature-meta__system_components'>
+      <label>System components:</label>
+      <div>
+        {% for component in page.system_components %}
+          <span class='tag'>{{ component }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class='feature-meta__version'>
+      <label>Version:</label>
+      <div>
+        <span class='feature-meta__version'>{{ page.version }}</span>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,6 @@
+{% assign sorted_models = include.models | sort: "name" %}
+<div class="models-list">
+  {% for model in sorted_models %}
+    {% include/models/_model.html model=model %}
+  {% endfor %}
+</div>
