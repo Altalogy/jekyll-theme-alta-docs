@@ -79,26 +79,27 @@ The Jekyll theme for documenting software development projects.
 
         This is my home page
 
+... or:
+
+        ---
+        layout: page
+        ---
+
+        {% include project_overview.html next_button="/docs/development/" %}
+
+
 7. Run:
 
         bundle exec jekyll serve
 
 ### What's next?
 
-Add more documents in *_docs* folder and see [advanced options](#advanced-options).
+Add more documents in *_docs* folder and see [advanced options](docs/advanced_options).
 
 
 ## Advanced options
 
-### Common _config.yml options
 
-        title             : "Project title"
-
-        getting_started   : >-    # Used in the Project overview component
-          Take a look on the useful materials below.
-          Start by checking "the System Overview" to get a big picture of the project.
-          Don't forget to check "Development Guidelines".
-          Find more by exploring navigation on the left.
 
 
 

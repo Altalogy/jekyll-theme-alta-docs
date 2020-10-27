@@ -189,6 +189,20 @@ Rails.application.config.generators do |g|
 end
 ```
 
+Generate migration:
+
+```bash
+$ rails g migration enable_uuid
+```
+
+```ruby
+class EnableUUID < ActiveRecord::Migration
+  def change
+    enable_extension 'pgcrypto'
+  end
+end
+```
+
 
 #### Apipie
 
