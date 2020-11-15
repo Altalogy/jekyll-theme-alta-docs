@@ -2,7 +2,7 @@
 title: Guidelines
 category: Introduction
 layout: doc
-order: 12
+order: 110
 toc: true
 ---
 

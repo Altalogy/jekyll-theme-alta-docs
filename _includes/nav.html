@@ -38,10 +38,22 @@
       <li{{ current }}>
         <a href="{{ site.baseurl }}{{ doc.url }}" class='ad-nav-link'>
           <span class='title'>{{ doc.title }}</span>
-          {% if doc.status || doc.prio || doc.version %}
+          {% if doc.status or doc.prio or doc.version or doc.vtags or doc.vtag %}
             <div class='doc-meta-nav'>
-              <span class='tag tag--{{ doc.status }} feature-meta__status--{{ doc.status }}'>{{ doc.status }}</span>
-              <span class='tag tag--{{ doc.prio }} feature-meta__status--{{ doc.prio }}'>{{ doc.prio }}</span>
+              {% if doc.status %}
+                <span class='tag tag--{{ doc.status }} feature-meta__status--{{ doc.status }}'>{{ doc.status }}</span>
+              {% endif %}
+              {% if doc.prio %}
+                <span class='tag tag--{{ doc.prio }} feature-meta__status--{{ doc.prio }}'>{{ doc.prio }}</span>
+              {% endif %}
+              {% if doc.vtag %}
+                <span class='tag tag--{{ doc.vtag | replace: " ", "-" }} feature-meta__status--{{ doc.vtag | replace: " ", "-" }}'>{{ doc.vtag }}</span>
+              {% endif %}
+              {% if doc.vtags %}
+                {% for vtag in doc.vtags %}
+                  <span class='tag tag--{{ vtag | replace: " ", "-" }} feature-meta__status--{{ vtag | replace: " ", "-" }}'>{{ vtag }}</span>
+                {% endfor %}
+              {% endif %}
               <span class='version'>{{ doc.version }}</span>
             </div>
           {% endif %}

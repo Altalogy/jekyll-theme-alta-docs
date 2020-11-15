@@ -1,0 +1,31 @@
+[
+  {
+    "id": "REQ_0001",
+    "title": "Simple requirement"
+  },
+  {
+    "id": "REQ_0002",
+    "title": "Another requirement",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": "REQ_0003",
+    "title": "Third requirement",
+    "description": "Lorem ipsum dolor sit amet.",
+    "links": [
+      {
+        "name": "First link",
+        "source": "#req_0001-simple-requirement"
+      },
+      {
+        "source": "http://example.com"
+      }
+    ]
+  },
+  {
+    "id": "REQ_0004",
+    "title": "Final requirement",
+    "description": "Already implemented.",
+    "status": "implemented"
+  },
+]

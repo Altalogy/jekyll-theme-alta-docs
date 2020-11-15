@@ -1,0 +1,35 @@
+{% assign rlist = include.list %}
+{% assign rtitle = include.title %}
+{% if rtitle %}
+  <h2>{{ rtitle | upcase }}</h2>
+{% endif %}
+
+<div class="requirements-list">
+  {% for r in rlist %}
+    <div class="requirements-list__item">
+      {% if r.status %}
+        <span class="requirements-list__status tag">{{ r.status }}</span>
+      {% endif %}
+
+      <h3><span class="requirements-list__id">{{ r.id }}</span> {{ r.title }}</h3>
+
+      {% if r.description %}
+        <p>{{ r.description }}</p>
+      {% endif %}
+
+      {% if r.links %}
+        <ul class="links">
+          {% for l in r.links %}
+            {% assign link_name = l.source %}
+            {% if l.name %}
+              {% assign link_name = l.name %}
+            {% endif %}
+            <li>
+              <a href="{{ l.source }}">{{ link_name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

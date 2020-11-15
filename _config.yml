@@ -40,21 +40,6 @@ links:
       icon  : "fas fa-pencil-alt"
       url   : /architecture/
 
-system_components:
-  - name  : Frontend
-    techs :
-      - name: React.js
-      - name: Redux
-  - name  : Backend
-    techs :
-      - name: Ruby on Rails
-  - name  : Database
-    techs :
-      - name: PostgreSQL
-  - name  : Service provider
-    techs :
-      - name: AWS
-
 sass:
   sass_dir        : _sass
   style           : compressed

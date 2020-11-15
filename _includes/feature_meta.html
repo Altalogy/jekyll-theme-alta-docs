@@ -1,30 +1,57 @@
-{% if page.status || page.prio || page.system_components || page.version %}
+{% if page.status or page.prio or page.system_components or page.version or page.vtags or page.vtag %}
   <div class='feature-meta'>
-    <div class='feature-meta__status'>
-      <label>Status:</label>
-      <div>
-        <span class='tag tag--{{ page.status }} feature-meta__status--{{ page.status }}'>{{ page.status }}</span>
+    {% if page.vtags or page.vtag %}
+      <div class='feature-meta__version'>
+        <label>Tags:</label>
+        <div>
+          {% if page.vtag %}
+            <span class='tag tag--{{ page.vtag | replace: " ", "-" }} feature-meta__status--{{ page.vtag | replace: " ", "-" }}'>{{ page.vtag }}</span>
+          {% endif %}
+          {% if page.vtags %}
+            {% for vtag in page.vtags %}
+              <span class='tag tag--{{ vtag | replace: " ", "-" }} feature-meta__status--{{ vtag | replace: " ", "-" }}'>{{ vtag }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
       </div>
-    </div>
-    <div class='feature-meta__prio'>
-      <label>Priority:</label>
-      <div>
-        <span class='tag tag--{{ page.prio }} feature-meta__prio--{{ page.prio }}'>{{ page.prio }}</span>
+    {% endif %}
+
+    {% if page.status %}
+      <div class='feature-meta__status'>
+        <label>Status:</label>
+        <div>
+          <span class='tag tag--{{ page.status }} feature-meta__status--{{ page.status }}'>{{ page.status }}</span>
+        </div>
       </div>
-    </div>
-    <div class='feature-meta__system_components'>
-      <label>System components:</label>
-      <div>
-        {% for component in page.system_components %}
-          <span class='tag'>{{ component }}</span>
-        {% endfor %}
+    {% endif %}
+
+    {% if page.prio %}
+      <div class='feature-meta__prio'>
+        <label>Priority:</label>
+        <div>
+          <span class='tag tag--{{ page.prio }} feature-meta__prio--{{ page.prio }}'>{{ page.prio }}</span>
+        </div>
       </div>
-    </div>
-    <div class='feature-meta__version'>
-      <label>Version:</label>
-      <div>
-        <span class='feature-meta__version'>{{ page.version }}</span>
+    {% endif %}
+
+    {% if page.system_components %}
+      <div class='feature-meta__system_components'>
+        <label>System components:</label>
+        <div>
+          {% for component in page.system_components %}
+            <span class='tag'>{{ component }}</span>
+          {% endfor %}
+        </div>
       </div>
-    </div>
+    {% endif %}
+
+    {% if page.version %}
+      <div class='feature-meta__version'>
+        <label>Version:</label>
+        <div>
+          <span class='feature-meta__version'>{{ page.version }}</span>
+        </div>
+      </div>
+    {% endif %}
   </div>
 {% endif %}

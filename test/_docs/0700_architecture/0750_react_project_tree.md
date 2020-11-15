@@ -2,7 +2,7 @@
 title: React's project tree
 category: Architecture
 layout: doc
-order: 22
+order: 750
 toc: true
 ---
 

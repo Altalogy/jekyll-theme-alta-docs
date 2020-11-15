@@ -2,7 +2,7 @@
 title: Rails project setup
 category: Materials
 layout: doc
-order: 1010
+order: 2010
 toc: true
 ---
 

@@ -511,6 +511,13 @@ button.ad-collapsible, .ad-collapsible {
   &.tag--high {
     background: #F20455;
   }
+
+  &.tag--epic {
+    background: #0392CC;
+  }
+  &.tag--user-story {
+    background: #ABC9B8;
+  }
 }
 
 .ad-nav-link {
@@ -573,6 +580,31 @@ button.ad-collapsible, .ad-collapsible {
       font-weight: 500;
       font-family: $font-family-primary;
       color: $gray-400;
+    }
+  }
+}
+
+.requirements-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .requirements-list__item {
+    border-bottom: 1px solid $gray-200;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    h4 {
+      margin-top: 0px;
+    }
+    .requirements-list__id {
+      font-size: 10px;
+      color: $primary-color;
+    }
+    ul.links {
+      margin-top: 20px;
+      list-style: none;
+      padding-left: 0;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      font-size: 14px;
     }
   }
 }

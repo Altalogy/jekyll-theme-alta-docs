@@ -94,7 +94,7 @@ The Jekyll theme for documenting software development projects.
 
 ### What's next?
 
-Add more documents in *_docs* folder and see [advanced options](docs/advanced_options).
+Add more documents in *_docs* folder and see [advanced options](docs/01_advanced_options.md).
 
 
 ## Advanced options
@@ -166,28 +166,7 @@ The documentation version is displayed in the footer.
 
 ## Components (includes)
 
-### Project overview
 
-The "Project overview" component renders:
-
-* `project_title`
-* `doc_version`
-* `description`
-* `getting_started`
-* `system_components`
-* `links`
-
-Props:
-
-* `next_button` - URL for the "Get started!" button
-
-Usage:
-
-        {% include project_overview.html next_button="/docs/development/" %}
-
-Example:
-
-![Project overview](docs/project_overview.png)
 
 
 ## Development
@@ -195,6 +174,11 @@ Example:
 To set up your environment to develop this theme, run `bundle install`.
 
 To test theme, run: `bundle exec rake preview` or `bundle exec rake preview host=xxx.xx.xxx.xx`
+
+
+## Development todo's
+
+Add more templates, integrations with *the source code*, setup scripts.
 
 
 ## License

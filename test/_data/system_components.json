@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Frontend",
+    "techs" : [
+      { "name": "React.js" },
+      { "name": "Redux" }
+    ]
+  },
+  {
+    "name": "Backend",
+    "techs": [
+      { "name": "Ruby on Rails" }
+    ]
+  },
+  {
+    "name": "Database",
+    "techs": [
+      { "name": "PostgreSQL" }
+    ]
+  },
+  {
+    "name": "Service provider",
+    "techs": [
+      { "name": "AWS" }
+    ]
+  }
+]
